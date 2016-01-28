@@ -2,10 +2,10 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>HTML Academy: Техномарт</title>
+    <title>HTML Academy: Техномарт</title> <!-- Название страницы.html - не название товара на ней, делаем универсальную страницу для всех товаров -->
   </head>
   <body>
-  	<header class="main-header">
+  	<header class="main-header"> <!-- Правки по хедеру в index -->
       <div class="main-header">
       	<a href="#" class="main-header-logo">
       		<img src="technomart-logo.png" height="50" weight="200" alt="technomart">
@@ -56,7 +56,7 @@
         </nav>
       </div>
     </header>
-    <!-- Begin container -->
+    <!-- Begin container --> <!-- Main -->
     <div class="container">
     	<div class="breadcrumbs">
         <ul>
@@ -69,12 +69,12 @@
     	<div class="category-rock-drill">
     		<h2>Перфораторы</h2>
     	</div>
-      <aside class="filter">
+      <aside class="filter"> <!-- Точно aside? -->
         <div class="filter-title">
           <p>Фильтр:</p>
         </div>
-        <h3>Цена:</h3>
-        <div class="range-filter">
+        <h3>Цена:</h3> <!-- Похоже на <legend> -->
+        <div class="range-filter"> <!-- Not bad, но структура всё равно изменится при стилизации :) И инпуты должны быть в форме -->
           <div class="range-controls">
               <div class="scale"><div class="bar"></div></div>
               <div class="toggle min-toggle"></div>
@@ -86,10 +86,10 @@
           </div>
         </div>
         <hr>
-        <h3>Производители:</h3>
-        <form action="/echo" method="post">
-          <div class="brands">
-            <input id="checkbox-1" type="checkbox" checked>
+        <h3>Производители:</h3> <!-- Похоже на <legend> -->
+        <form action="/echo" method="post"> <!-- Форма одна, т.к. кнопка общая -->
+          <div class="brands"> <!-- Нужен ли? Обоснуй :) -->
+            <input id="checkbox-1" type="checkbox" checked> <!-- Можно прямо оборачивать чекбоксы в лэйблы, чтоб не заморачиваться с id и for, но это тоже правильный вариант -->
             <label for="checkbox-1">Bosch</label>
             <input id="checkbox-2" type="checkbox">
             <label for="checkbox-2">Интерскол</label>
@@ -102,26 +102,26 @@
           </div>
         </form>
         <hr>
-        <h3>Питание</h3>
-        <form action="/echo" method="post">
-          <div class="power-type">
+        <h3>Питание</h3> <!-- Похоже на <legend> -->
+        <form action="/echo" method="post"> <!-- Лишняя форма -->
+          <div class="power-type"> <!-- Лишний? -->
             <input id="radio-1" name="radio" type="radio" checked>
             <label for="radio-1">Аккумуляторные</label>
             <input id="radio-2" name="radio" type="radio">
-            <label for="radio-2">Сетвые</label>
+            <label for="radio-2">Сетвые</label> <!-- Копируй текст из макета и проверяй орфографию онлайн бесплатно без регистрации и смс-->
           </div>
         </form>
       </aside>
-      <div class="sort">
-        <p>Сортировка:</p>
-        <p class="sort-selected">По цене</p>
+      <div class="sort"> <!-- Всю правую часть в отдельный контейнер -->
+        <p>Сортировка:</p> <!-- Ниже список -->
+        <p class="sort-selected">По цене</p> <!-- <a class="sort sort-selected"> -->
         <p class="sort">По типу</p>
         <p class="sort">По функционалу</p>
-        <button class="btn-sort-straight"></button>
+        <button class="btn-sort-straight"></button> <!-- Либо <a>, если активный элемент, либо span, но не кнопка -->
         <button class="btn-sort-reverse"></button>
       </div>
-      <article class="item">
-        <a href="#"><img src="rock-drill-bosch-bfg-0002.png" height="150" weight="200" alt="Перфоратор BOSCH BFG 3000"></a>
+      <article class="item"> <!-- Любую плиточку с карточками товаров тоже лучше оборачивать в отдельный блок -->
+        <a href="#"><img src="rock-drill-bosch-bfg-0002.png" height="150" weight="200" alt="Перфоратор BOSCH BFG 3000"></a> <!-- У всех карточек одна структура как у номера 3 -->
         <p>Перфоратор BOSCH BFG 3000</p>
         <p class="old-price">22500 Р.</p>
         <a href="" class="btn buy">15500 Р.</a>
@@ -132,9 +132,9 @@
         <p class="old-price">30500 Р.</p>
         <a href="" class="btn buy">25500 Р.</a>
       </article>
-      <article class="item-new">
-        <a class="btn-buy-now" href="#"></a>
-        <a class="btn-buy-later" href="#"></a>
+      <article class="item-new"> <!-- item item-new -->
+        <a class="btn-buy-now" href="#"></a> <!-- Картинка прячется, но существует --> <!-- Купить -->
+        <a class="btn-buy-later" href="#"></a> <!-- В закладки -->
         <p>Перфоратор BOSCH BFG 2000</p>
         <a href="#" class="btn buy">12500 Р.</a>
       </article>
@@ -173,7 +173,7 @@
         <p>Перфоратор BOSCH BFG 2000</p>
         <a href="#" class="btn buy">12500 Р.</a>
       </article>
-      a.btn{1}+a.btn-unselected{2}+a.btn-unselected{3}+a.btn-unselected{Следующая}
+      a.btn{1}+a.btn-unselected{2}+a.btn-unselected{3}+a.btn-unselected{Следующая} <!-- Tab подвёл :) Их списком и тоже в отдельный блок-->
     <!-- End container -->
     <div class="read-more">
     	<div class="container">
@@ -183,7 +183,7 @@
     		</div>
     	</div>
     </div>
-    <footer class="main-footer">
+    <footer class="main-footer"> <!-- Футер с главной -->
     	<div class="container">
     		<section class="footer-contacts">
 	    		<img src="technomart-logo.png" height="50" weight="200" alt="technomart">

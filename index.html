@@ -6,14 +6,14 @@
   </head>
   <body>
 		<header class="main-header">
-      <div class="main-header">
+      <div class="main-header"> <!-- Одинаковые классы хедеру и блоку? -->
       	<a href="#" class="main-header-logo">
-      		<img src="technomart-logo.png" height="50" weight="200" alt="technomart">
+      		<img src="technomart-logo.png" height="50" weight="200" alt="technomart"> <!-- Неплохой вес у картинки, аж 200 :) -->
       	</a>
-      	<a href="#" class="main-header-search">Поиск:</a>
-      	<a href="#" class="main-header-bookmarks">Закладки: 0</a>
-      	<a href="#" class="main-header-cart">Корзина: 0</a>
-      	<a href="#" class="order selected">Оформить заказ</a>
+      	<a href="#" class="main-header-search">Поиск:</a> <!-- Поле для поиска -->
+      	<a href="#" class="main-header-bookmarks">Закладки: 0</a> <!-- Список? И числовые значения лучше сразу оборачивать в спан, т.к. они будут меняться-->
+      	<a href="#" class="main-header-cart">Корзина: 0</a> <!-- Один общий класс и один модификатор для стилизации иконки, то же самое по поводу нуля -->
+      	<a href="#" class="order selected">Оформить заказ</a> <!-- Просто selected не стоит использовать, лучше как модификатор -->
       </div>
       <div class="container">
         <div class="second-header">
@@ -24,7 +24,7 @@
         		<a href="" class="contacts-number">+7 (812) 555-05-55</a>
         		<p>г. Санкт-Петербург, ул. Б.Конюшенная, д.19/8</p>
         	</div>
-        	<div class="user-block">
+        	<div class="user-block"> <!-- Что будет в этом блоке, когда клиент войдёт в систему? -->
         		<a href="#" class="user-block-login">Войти</a>
         		<a href="#" class="user-block-registration">Регистрация</a>
       		</div>
@@ -56,11 +56,11 @@
         </nav>
       </div>
     </header>
-    <!-- Begin container -->
+    <!-- Begin container --> <!-- Main? -->
     <div class="container">
-    	<section class="advantages">
+    	<section class="advantages"> <!-- Вряд ли это "преимущества", скорее промо -->
     		<p>Материалы</p>
-    		<p class="btn disabled">На любой вкус</p>
+    		<p class="btn disabled">На любой вкус</p> <!-- Почему <p> и почему disabled? -->
     	</section>
     	<section class="advantages">
     		<p>Инструмент</p>
@@ -78,24 +78,24 @@
     		<p>Доставка</p>
     		<p class="btn disabled">Бесплатно</p>
     	</section>
-    	<div class="gallery">
-    		<b class="gallery-promotitle">Перфораторы</b>
+    	<div class="gallery"> <!-- Почему здесь? Логичнее закинуть 4-м по списку после техники, а 2 последних промоблока объединить справа в 1 -->
+    		<b class="gallery-promotitle">Перфораторы</b> <!-- Выглядит как заголовок -->
     		<p>Настоящие мужские игрушки</p>
-    		<figure>
-    			<img src="rock-drill-promo.png" height="300" weight="600" alt="Перфораторы">
+    		<figure> <!-- Не подходит -->
+    			<img src="rock-drill-promo.png" height="300" weight="600" alt="Перфораторы"> <!-- width, но это фоновая картинка -->
     			<button class="btn-gallery-prev"></button>
     			<button class="btn-gallery-next"></button>
-    			<a href="#" class="btn">Открыть каталог</a>
-    		</figure>
-    	</div>
-    	<div class="popular">
+    			<a href="#" class="btn">Открыть каталог</a> <!-- Забыл переключатели справа от кнопки -->
+    		</figure> <!-- Есть ещё второй слайд :) -->
+    	</div> <!-- Конец большой секции с промо-товарами -->
+    	<div class="popular"> <!-- Начало отдельной секции -->
     		<h2>Популярные товары:</h2>
-    		<div class="btn">Все популярные товары</div>
+    		<div class="btn">Все популярные товары</div> <!-- Не бойся тега <a> :) -->
     	</div>
-    	<article class="item">
-    		<a href="#"><img src="rock-drill-bosch-bfg-0001.png" height="150" weight="200" alt="Перфоратор BOSCH BFG 9000"></a>
+    	<article class="item"> <!-- Структура немного другая. При наведении вместо картинки появляются 2 кнопки "Купить" и "В закладке", показано в макете каталога -->
+    		<a href="#"><img src="rock-drill-bosch-bfg-0001.png" height="150" weight="200" alt="Перфоратор BOSCH BFG 9000"></a> <!-- width здесь и дальше -->
     		<p>Перфоратор BOSCH BFG 9000</p>
-    		<p class="old-price">32500 Р.</p>
+    		<p class="old-price">32500 Р.</p> <!-- span -->
     		<a href="#" class="btn buy">25500 Р.</a>
     	</article>
     	<article class="item">
@@ -117,9 +117,9 @@
     	</article>
     	<div class="popular">
     		<h2>Популярные производители:</h2>
-    		<div class="btn">Все производители</div>
+    		<div class="btn">Все производители</div> <!-- Ссылка -->
     	</div>
-    	<article class="brand"><a href="#"><img src="bosch-logo.png" height="150" weight="200" alt="bosch"></a></article>
+    	<article class="brand"><a href="#"><img src="bosch-logo.png" height="150" weight="200" alt="bosch"></a></article> <!-- width -->
     	<article class="brand"><a href="#"><img src="makita-logo.png" height="150" weight="200" alt="makita"></a></article>
     	<article class="brand"><a href="#"><img src="dewalt-logo.png" height="150" weight="200" alt="dewalt"></a></article>
     	<article class="brand"><a href="#"><img src="interskol-logo.png" height="150" weight="200" alt="interskol"></a></article>
@@ -129,7 +129,7 @@
     	<article class="brand"><a href="#"><img src="metabo-logo.png" height="150" weight="200" alt="metabo"></a></article>
     </div>
     <!-- End container -->
-    <div class="read-more">
+    <div class="read-more"> <!-- Скорее тут "Сервисы" -->
     	<div class="container">
     		<div class="services">
     			<h2>Сервисы</h2>
@@ -137,21 +137,21 @@
     		</div>
     		<div class="service-switcher">
     			<ul>
-    				<li class="service-switcher-selected"><a href="">Доставка</a></li>
-    				<li><a href="">Гарантия</a></li>
+    				<li class="service-switcher-selected"><a href="">Доставка</a></li> <!-- Здесь должны быть service-item service-item-selected -->
+    				<li><a href="">Гарантия</a></li> <!-- А здесь и ниже просто service-item -->
     				<li><a href="">Кредит</a></li>
     			</ul>
     		</div>
     		<div class="delivery">
     			<b class="services-promo">Доставка</b>
     			<p>Мы с удовольствием достави Ваш товар прямо к Вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на Ваш этаж!</p>
-    		</div>
+    		</div> <!-- Дальше должны быть 2 оставшихся блока переключалки - "Гарантия" и "Кредит" -->
     	</div>
     </div>
-    <section class="about-company">
+    <section class="about-company"> <!-- Лучше в отдельный информационный блок с двумя колонками о компании и контактами -->
     	<h2>Компания "Техномарт"</h2>
     	<p>Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и строительства не оставит равнодушным любителей сэкономить на гастарбайтерах.</p>
-    	<p>Мы можем доставить Ваш товар в самые отдаленные Точки России! Техномарт  работает со многими транспортными компаниями:</p>
+    	<p>Мы можем доставить Ваш товар в самые отдаленные Точки России! <!-- br? --> Техномарт  работает со многими транспортными компаниями:</p>
     	<ul>
     		<li>Деловые линии</li>
     		<li>Автотрейдинг</li>
@@ -165,15 +165,15 @@
     	<a href="#"><img src="map.png" height="150" weight="250" alt="Карта"></a>
     	<a href="#" class="btn">Заблудились? Напишите нам!</a>
     </section>
-    <footer class="main-footer">
+    <footer class="main-footer"> <!-- Объедини футеры в один и разбей уже внутри на части -->
     	<div class="container">
     		<section class="footer-contacts">
-	    		<img src="technomart-logo.png" height="50" weight="200" alt="technomart">
+	    		<img src="technomart-logo.png" height="50" weight="200" alt="technomart"> <!-- Выглядит как ссылка -->
 	        <p>г. Санкт-Петербург, ул. Б.Конюшенная, д.19/8 <br>+7 (812) 555-05-55</p>
 				</section>
 				<section class="footer-info-list">
 					<ul class="company-info">
-						<li>Компания</li>
+						<li>Компания</li> <!-- Внутри ссылки -->
 						<li>Новости</li>
 						<li>Каталог</li>
 						<li>Доставка</li>
@@ -195,7 +195,7 @@
           Все права защищены
         </section>
         <section class="footer-social">
-          <a class="social-btn social-btn-vk" href="#">Вконтакте</a>
+          <a class="social-btn social-btn-vk" href="#">Вконтакте</a> <!-- Тоже список? -->
           <a class="social-btn social-btn-fb" href="#">Фейсбук</a>
           <a class="social-btn social-btn-inst" href="#">Инстаграм</a>
         </section>
