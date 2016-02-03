@@ -2,7 +2,8 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Техномарт - Товары</title>
+    <title>Техномарт - Товары</title> <!-- Название страницы.html - не название товара на ней, делаем универсальную страницу для всех товаров/// Done -->
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header class="main-header">
@@ -13,7 +14,7 @@
         <form action="" method="post" id="search">
           <label><input type="submit" value=""></label>
           <label><input type="search" name="q" placeholder="Поиск"></label>
-        </form>
+        </form> <!-- Поле для поиска/// Done -->
         <ul>
           <li><a href="#" class="useractions useractions-bookmarks">Закладки: <span>0</span></a></li> 
           <li><a href="#" class="useractions useractions-cart cart-selected">Корзина: <span>10</span></a></li> 
@@ -23,7 +24,7 @@
       <div class="container">
         <div class="second-header">
           <div class="description">
-            <p>Интернет-магазин <br>строительных материалов <br>и инструментов для ремонта</p>
+            <p>Интернет-магазин<br>строительных материалов<br>и инструментов для ремонта</p> <!--промо-текст, поэтому br -->
           </div>
           <div class="contacts">
             <a href="" class="contacts-number">+7 (812) 555-05-55</a>
@@ -70,6 +71,7 @@
       </div>
     </header>
     <main>
+      <!-- Begin container --> <!-- Main /// Done-->
       <div class="container">
         <div class="breadcrumbs">
           <ul>
@@ -82,14 +84,22 @@
         <div class="category-rock-drill">
           <h2>Перфораторы</h2>
         </div>
-        <div class="filter">
+        <!-- Начался попап "Товар добавлен в корзину!" /// Ок, но почему после здесь после другого заголовка? Будет всплывать и позиционироваться относительно вьюпорта, т.ч. перекинь пока сразу ниже крошек -->
+        <div class="add-to-cart" id="add-to-cart">
+          <img src="img/popup-close-img.jpg" alt="Закрыть" class="popup-close-img">
+          <img src="img/cart-done.png" alt="Done" class="addto-cart-done">
+          <span>Товар добавлен в корзину!</span>
+          <div class="btn-cart-group"><a href="" class="btn">Оформить заказ</a><a href="" class="btn-unselected">Продолжить покупки</a></div>
+        </div>
+        <!-- Закончился попап "Товар добавлен в корзину!"-->
+        <div class="filter"> <!-- Точно aside? /// Done-->
           <div class="filter-title">
             <p>Фильтр:</p>
           </div>
-          <form>
-            <fieldset> <!-- Нужно ли? -->
-              <legend>Цена:</legend>
-              <div class="range-filter">
+          <form> <!-- Форма одна, т.к. кнопка общая /// Done--> 
+            <fieldset>  
+              <legend>Цена:</legend> <!-- Похоже на <legend> -->
+              <div class="range-filter"> <!-- Not bad, но структура всё равно изменится при стилизации :) И инпуты должны быть в форме -->
                 <div class="range-controls">
                     <div class="scale"><div class="bar"></div></div>
                     <div class="toggle min-toggle"></div>
@@ -101,8 +111,8 @@
                 </div>
               </div>
               <hr>
-              <legend>Производители:</legend>
-              <input id="checkbox-1" type="checkbox" checked>
+              <legend>Производители:</legend> <!-- Похоже на <legend> /// Done-->
+              <input id="checkbox-1" type="checkbox" checked> <!-- Можно прямо оборачивать чекбоксы в лэйблы, чтоб не заморачиваться с id и for, но это тоже правильный вариант -->
               <label for="checkbox-1">Bosch</label>
               <input id="checkbox-2" type="checkbox">
               <label for="checkbox-2">Интерскол</label>
@@ -113,28 +123,28 @@
               <input id="checkbox-5" type="checkbox">
               <label for="checkbox-5">Hitachi</label>
               <hr>
-              <legend>Питание</legend>
+              <legend>Питание</legend> <!-- Похоже на <legend> /// Done -->
               <input id="radio-1" name="radio" type="radio" checked>
               <label for="radio-1">Аккумуляторные</label>
               <input id="radio-2" name="radio" type="radio">
-              <label for="radio-2">Сетевые</label>
-              <!-- Кнопка отправки данных формы потерялась -->
+              <label for="radio-2">Сетевые</label> <!-- Копируй текст из макета и проверяй орфографию онлайн бесплатно без регистрации и смс /// Done-->
+              <button class="btn" type="submit">Показать</button> <!-- Кнопка отправки данных формы потерялась /// Done -->
             </fieldset>
           </form>
         </div>
-        <div class="items-on-page">
+        <div class="items-on-page"> <!-- Всю правую часть в отдельный контейнер /// Done -->
           <div class="sort"> 
-            <p>Сортировка:</p> <!-- Ниже список /// Done /// А это можно спаном) -->
+            <span>Сортировка:</span> <!-- А это можно спаном /// Done-->
             <ul>
-              <li><a class="sort sort-selected" href="#">По цене</a></li>
+              <li><a class="sort sort-selected" href="#">По цене</a></li> <!-- Done -->
               <li><a class="sort" href="#">По типу</a></li>
               <li><a class="sort" href="#">По функционалу</a></li>
               <li><a class="sort sort-straight" href="#"></a></li>
-              <li><a class="sort sort-reverse" href="#"></a></li>
+              <li><a class="sort sort-reverse" href="#"></a></li> <!-- Либо <a>, если активный элемент, либо span, но не кнопка /// Done -->
             </ul>
           </div>
-          <div class="item-box">  <!-- Любую плиточку с карточками товаров тоже лучше оборачивать в отдельный блок /// Done /// Неправильно объяснил :) Карточкам товара нужен отдельный контейнер-обёртка для ВСЕХ, под плиточкой имеется в виду их отображение в виде плитки. Для каждой карточки уже и так есть своя обёртка -->
-            <article class="item">
+          <div class="items-box">  <!-- Все карточки завернуты в блок /// Done -->
+            <article class="item"> <!-- У всех карточек одна структура как у номера 3 -->
               <img class="item-photo" src="rock-drill-bosch-bfg-0002.png" height="150" width="200" alt="Перфоратор BOSCH BFG 3000"> 
               <a class="btn-buy-now" href="#">Купить</a>  
               <a class="btn-buy-later" href="#">В закладки</a> 
@@ -144,8 +154,6 @@
                 <span>15500 Р.</span>
               </div>
             </article>
-          </div>
-          <div class="item-box"> 
             <article class="item"> 
               <img class="item-photo" src="rock-drill-bosch-bfg-0003.png" height="150" width="200" alt="Перфоратор BOSCH BFG 6000"> 
               <a class="btn-buy-now" href="#">Купить</a>  
@@ -156,20 +164,16 @@
                 <span>25500 Р.</span>
               </div>
             </article>
-          </div>
-          <div class="item-box"> 
-            <article class="item item-new">
-              <img class="item-photo" src="rock-drill-bosch-bfg-0004.png" height="150" width="200" alt="Перфоратор BOSCH BFG 2000">
-              <a class="btn-buy-now" href="#">Купить</a>
-              <a class="btn-buy-later" href="#">В закладки</a>
+            <article class="item item-new"> <!-- item item-new -->
+              <img class="item-photo" src="rock-drill-bosch-bfg-0004.png" height="150" width="200" alt="Перфоратор BOSCH BFG 2000"> <!-- Картинка прячется, но существует ///Done -->
+              <a class="btn-buy-now" href="#">Купить</a>  <!-- Купить /// Done -->
+              <a class="btn-buy-later" href="#">В закладки</a> <!-- В закладки///Done -->
               <p>Перфоратор BOSCH BFG 2000</p>
               <span class="item-old-price">20500 Р.</span> 
               <div class="btn btn-buy">
                 <span>12500 Р.</span>
               </div>
             </article>
-          </div>
-          <div class="item-box">  
             <article class="item"> 
               <img class="item-photo" src="rock-drill-bosch-bfg-0002.png" height="150" width="200" alt="Перфоратор BOSCH BFG 3000"> 
               <a class="btn-buy-now" href="#">Купить</a>  
@@ -180,8 +184,6 @@
                 <span>15500 Р.</span>
               </div>
             </article>
-          </div>
-          <div class="item-box"> 
             <article class="item item-new"> 
               <img class="item-photo" src="rock-drill-bosch-bfg-0003.png" height="150" width="200" alt="Перфоратор BOSCH BFG 6000"> 
               <a class="btn-buy-now" href="#">Купить</a>  
@@ -192,8 +194,36 @@
                 <span>25500 Р.</span>
               </div>
             </article>
-          </div>
-          <div class="item-box"> 
+            <article class="item"> 
+              <img class="item-photo" src="rock-drill-bosch-bfg-0004.png" height="150" width="200" alt="Перфоратор BOSCH BFG 2000"> 
+              <a class="btn-buy-now" href="#">Купить</a>  
+              <a class="btn-buy-later" href="#">В закладки</a> 
+              <p>Перфоратор BOSCH BFG 2000</p>
+              <span class="item-old-price">20500 Р.</span> 
+              <div class="btn btn-buy">
+                <span>12500 Р.</span>
+              </div>
+            </article>
+            <article class="item item-new"> 
+              <img class="item-photo" src="rock-drill-bosch-bfg-0002.png" height="150" width="200" alt="Перфоратор BOSCH BFG 3000"> 
+              <a class="btn-buy-now" href="#">Купить</a>  
+              <a class="btn-buy-later" href="#">В закладки</a> 
+              <p>Перфоратор BOSCH BFG 3000</p>
+              <span class="item-old-price">22500 Р.</span> 
+              <div class="btn btn-buy">
+                <span>15500 Р.</span>
+              </div>
+            </article>
+            <article class="item"> 
+              <img class="item-photo" src="rock-drill-bosch-bfg-0003.png" height="150" width="200" alt="Перфоратор BOSCH BFG 6000"> 
+              <a class="btn-buy-now" href="#">Купить</a>  
+              <a class="btn-buy-later" href="#">В закладки</a> 
+              <p>Перфоратор BOSCH BFG 6000</p>
+              <span class="item-old-price">30500 Р.</span> 
+              <div class="btn btn-buy">
+                <span>25500 Р.</span>
+              </div>
+            </article>
             <article class="item"> 
               <img class="item-photo" src="rock-drill-bosch-bfg-0004.png" height="150" width="200" alt="Перфоратор BOSCH BFG 2000"> 
               <a class="btn-buy-now" href="#">Купить</a>  
@@ -205,43 +235,7 @@
               </div>
             </article>
           </div>
-          <div class="item-box">  
-            <article class="item item-new"> 
-              <img class="item-photo" src="rock-drill-bosch-bfg-0002.png" height="150" width="200" alt="Перфоратор BOSCH BFG 3000"> 
-              <a class="btn-buy-now" href="#">Купить</a>  
-              <a class="btn-buy-later" href="#">В закладки</a> 
-              <p>Перфоратор BOSCH BFG 3000</p>
-              <span class="item-old-price">22500 Р.</span> 
-              <div class="btn btn-buy">
-                <span>15500 Р.</span>
-              </div>
-            </article>
-          </div>
-          <div class="item-box"> 
-            <article class="item"> 
-              <img class="item-photo" src="rock-drill-bosch-bfg-0003.png" height="150" width="200" alt="Перфоратор BOSCH BFG 6000"> 
-              <a class="btn-buy-now" href="#">Купить</a>  
-              <a class="btn-buy-later" href="#">В закладки</a> 
-              <p>Перфоратор BOSCH BFG 6000</p>
-              <span class="item-old-price">30500 Р.</span> 
-              <div class="btn btn-buy">
-                <span>25500 Р.</span>
-              </div>
-            </article>
-          </div>
-          <div class="item-box"> 
-            <article class="item"> 
-              <img class="item-photo" src="rock-drill-bosch-bfg-0004.png" height="150" width="200" alt="Перфоратор BOSCH BFG 2000"> 
-              <a class="btn-buy-now" href="#">Купить</a>  
-              <a class="btn-buy-later" href="#">В закладки</a> 
-              <p>Перфоратор BOSCH BFG 2000</p>
-              <span class="item-old-price">20500 Р.</span> 
-              <div class="btn btn-buy">
-                <span>12500 Р.</span>
-              </div>
-            </article>
-          </div>
-          <div class="pagination">
+          <div class="pagination"> <!-- Tab подвёл :) Их списком и тоже в отдельный блок /// Done-->
             <ul>
               <li><a href="" class="btn">1</a></li>
               <li><a href="" class="btn-unselected">2</a></li>
@@ -260,8 +254,8 @@
           </div>
         </div>
       </div>
-    </main> <!-- Есть ещё блок в макете с добавлением товара в корзину, надо засунуть в разметку -->
-    <footer class="main-footer">
+    </main> 
+    <footer class="main-footer"> <!-- Футер с главной /// Done-->
       <div class="container">
         <div class="main-footer-top">
           <section class="footer-contacts">

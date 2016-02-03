@@ -3,44 +3,46 @@
   <head>
     <meta charset="utf-8">
     <title>Техномарт</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header class="main-header">
-      <div class="main-header-top">
-        <a href="#" class="main-header-top-logo">
-            <img src="technomart-logo.png" height="50" width="200" alt="technomart">
-        </a>
+      <div class="main-header-top"> <!-- Одинаковые классы хедеру и блоку?/// Done -->
+        <span class="main-header-top-logo">Техномарт</span>
         <form action="" method="post" id="search">
           <label><input type="submit" value=""></label>
           <label><input type="search" name="q" placeholder="Поиск"></label>
-        </form>
+        </form> <!-- Поле для поиска/// Done -->
         <ul>
-          <li><a href="#" class="useractions useractions-bookmarks">Закладки: <span>0</span></a></li>
-            <li><a href="#" class="useractions useractions-cart">Корзина: <span>0</span></a></li>
-            <li><a href="#" class="useractions order-selected">Оформить заказ</a></li> <!-- Теперь модификатор ок, но что он должен делать?) Если под выбранным имеется в виду зелёная кнопка, то она в принципе такая по стилю - смотри styleguide.psd -->
+          <li><a href="#" class="useractions useractions-bookmarks">Закладки: <span>0</span></a></li> <!-- Список? И числовые значения лучше сразу оборачивать в спан, т.к. они будут меняться ///Done-->
+          <li><a href="#" class="useractions useractions-cart">Корзина: <span>0</span></a></li> <!-- Один общий класс и один модификатор для стилизации иконки, то же самое по поводу нуля /// Done -->
+          <li><a href="#" class="order-selected">Оформить заказ</a></li> <!-- Теперь модификатор ок, но что он должен делать?) Если под выбранным имеется в виду зелёная кнопка, то она в принципе такая по стилю - смотри styleguide.psd /// Теперь повесил просто отдельный класс-оформление кнопки запилить.-->
         </ul>
       </div>
       <div class="container">
         <div class="second-header">
-            <div class="description">
-                <p>Интернет-магазин <br>строительных материалов <br>и инструментов для ремонта</p>
-            </div>
-            <div class="contacts">
-                <a href="" class="contacts-number">+7 (812) 555-05-55</a>
-                <p>г. Санкт-Петербург, ул. Б.Конюшенная, д.19/8</p>
-            </div>
-            <div class="user-block"> <!-- При такой конструкции сложно будет скрывать/показывать нужные блоки. Представь, что пользователь вошёл в систему, тогда ему нужно будет скрыть кнопки входа и регистрации и показать всё остальное. Лучше разбить на 2 блока -->
-                <div class="user-block-username">
-                  <a href="#" class="user-block-login">Войти</a>
-                    <a href="#" class="user-block-registration">Регистрация</a>
-                  <span class="name">
-                    <p></p> <!-- В блоке авторизованного посетителя имя и иконка пользователя являются ссылкой на профайл, а иконка выхода — на страницу деавторизации - спецификация -->
-                  </span>
-                  <a href="" class="user-block-logout"></a>
+          <div class="description">
+            <p>Интернет-магазин<br>строительных материалов<br>и инструментов для ремонта</p> <!--промо-текст, поэтому br -->
+          </div>
+          <div class="contacts">
+            <a href="" class="contacts-number">+7 (812) 555-05-55</a>
+            <p>г. Санкт-Петербург, ул. Б.Конюшенная, д.19/8</p>
+          </div>
+          <div class="user-block"> <!--  /// Разбил на 2 блока в обертке-->
+              <div class="user-block-not-authorized">
+                <a href="#" class="user-block-login">Войти</a>
+                <a href="#" class="user-block-registration">Регистрация</a>
+              </div>
+              <!-- /.user-block-not-authorized -->
+              <div class="user-block-login">
+                <div class="user-block-login-name">
+                  <a href="#" class="user-name"><span class="name">Равшан Джамшутович</span></a> <!-- В блоке авторизованного посетителя имя и иконка пользователя являются ссылкой на профайл, а иконка выхода — на страницу деавторизации - спецификация /// Done-->
+                  <a href="#" class="user-block-logout"></a>
                 </div>
-                <a href="" class="user-blok-orders">Мои заказы</a>
-                <a href="" class="user-block-personal-area">Личный кабинет</a>
-            </div>
+                <a href="#" class="user-blok-orders">Мои заказы</a>
+                <a href="#" class="user-block-personal-area">Личный кабинет</a>
+              </div>
+          </div>
         </div>
         <nav class="main-navigation">
           <ul>
@@ -70,56 +72,68 @@
       </div>
     </header>
     <main>
+      <!-- Begin container --> <!-- Main? ///Done -->
       <div class="container">
         <div class="promo-features">
-            <section class="promo">
-                <p>Материалы</p>
-                <span class="btn-disabled">На любой вкус</span> <!-- Почему <p> и почему disabled? //// Один в один как используемые в макете кнопки, только фон другой /// Всё-таки ощущение, что это <a> :) Фон просто серый, но ссылка вполне живая, посмотри её поведение в styleguide.psd -->
-            </section>
-            <section class="promo">
-                <p>Инструмент</p>
-                <span class="btn-disabled">На все случаи</span>
-            </section>
-            <section class="promo">
-                <p>Техника</p>
-                <span class="btn-disabled">Для стройки</span>
-            </section>
-          <section class="gallery">
-            <div class="gallery-rock-drill">
-              <h2>Перфораторы</h2> 
+          <section class="promo"> <!-- Вряд ли это "преимущества", скорее промо ///Done -->
+            <p>Материалы</p>
+            <img src="feature-img-01.png" width="44" height="65" alt=" Материалы на любой вкус" class="feature-image">
+            <a class="feature-link">На любой вкус</a> <!-- Почему <p> и почему disabled? //// Один в один как используемые в макете кнопки, только фон другой-->
+          </section>
+          <section class="promo">
+            <p>Инструмент</p>
+            <img src="feature-img-02.png" width="75" height="61" alt="Инструмент на все случаи" class="feature-image">
+            <a class="feature-link">На все случаи</a>
+          </section>
+          <section class="promo">
+            <p>Техника</p>
+            <img src="feature-img-03.png" width="78" height="62" alt="Техника для стройки" class="feature-image">
+            <a class="feature-link">Для стройки</a>
+          </section>
+          <section class="gallery"> <!-- Почему здесь? Логичнее закинуть 4-м по списку после техники, а 2 последних промоблока объединить справа в 1 /// Done -->
+            <div class="gallery-rock-drill"> <!--figure Не подходит /// Done--> <!-- width, но это фоновая картинка ///, deleted, Done -->
+              <h2>Перфораторы</h2> <!-- Выглядит как заголовок /// Done-->
               <p>Настоящие мужские игрушки</p>
-            </div>
-            <div class="gallery-drill">
+            </div>  
+            <div class="gallery-drill"> <!-- Есть ещё второй слайд :) /// Done -->
               <h2>Дрели</h2>
               <p>На радость соседям!</p>
             </div>
             <button class="btn-gallery-prev"></button>
             <button class="btn-gallery-next"></button>
-            <a href="rock-drill.html" class="btn">Открыть каталог</a> <!-- Ссылка для каждого слайда своя -->
-            <button class="gallery-switcher gallery-switcher-selected"></button> <!-- Давай-ка в один блок эти 2 кпопки объединим, чтобы позионировать проще было -->
-            <button class="gallery-switcher"></button>
+            <a href="drill.html" class="btn">Открыть каталог</a> <!-- Ссылка для каждого слайда своя/// Done -->
+            <div class="gallery-switcher-group"> <!-- Давай-ка в один блок эти 2 кпопки объединим, чтобы позионировать проще было /// Done -->
+              <button class="gallery-switcher gallery-switcher-selected"></button> <!-- Забыл переключатели справа от кнопки /// Done -->
+              <button class="gallery-switcher"></button>
+            </div>
           </section>
-            <section class="promo"> <!-- В общий блок с нижним промо, чтобы правильно и удобно их спозиционировать -->
-                <p>Скидка 50%</p>
-                <span class="btn-disabled">на 350 товаров</span>
+          <div class="promo-features-group"> <!-- В общий блок с нижним промо, чтобы правильно и удобно их спозиционировать /// Done -->
+            <section class="promo">
+              <p>Скидка 50%</p>
+              <img src="feature-img-04.png" width="59" height="72" alt="Скидка 50% на 350 товаров" class="feature-image">
+              <a class="feature-link">на 350 товаров</a>
             </section>
             <section class="promo">
-                <p>Доставка</p>
-                <span class="btn-disabled">Бесплатно</span>
+              <p>Доставка</p>
+              <img src="feature-img-05.png" width="78" height="63" alt="Доставка бесплатно" class="feature-image">
+              <a class="feature-link">Бесплатно</a>
             </section>
-        </div>
-        <div class="promo-items">
+          </div>
+        </div><!-- Конец большой секции с промо-товарами // Done -->  
+        <div class="promo-items"><!-- Начало отдельной секции /// Done-->
           <div class="popular"> 
-                <h2>Популярные товары:</h2>
-                <a class="btn">Все популярные товары</a>
-            </div>
+            <h2>Популярные товары:</h2>
+            <a class="btn">Все популярные товары</a> <!-- Не бойся тега <a> :) ///  Done-->
+          </div>       
           <div class="item-box"> <!-- Структура немного другая. При наведении вместо картинки появляются 2 кнопки "Купить" и "В закладке", показано в макете каталога //// Done -->
             <article class="item">
-              <img class="item-photo" src="rock-drill-bosch-bfg-0001.png" height="150" width="200" alt="Перфоратор BOSCH BFG 9000">
-              <a class="btn-buy-now" href="#">Купить</a> <!-- 2 ссылки лучше в отдельный блок для удобного позиционирования -->
-              <a class="btn-buy-later" href="#">В закладки</a>
+              <img class="item-photo" src="rock-drill-bosch-bfg-0001.jpg" width="184" height="164" alt="Перфоратор BOSCH BFG 9000"> <!-- Картинка прячется, но существует ///Done --> <!-- width здесь и дальше /// Done-->
+              <div class="btn-by-group"> <!-- 2 ссылки лучше в отдельный блок для удобного позиционирования ///  Done /// btn-bUy-group?   -->
+                <a class="btn-buy-now" href="#">Купить</a>  <!-- Купить /// Done -->
+                <a class="btn-buy-later" href="#">В закладки</a> <!-- В закладки///Done -->
+              </div>
               <p>Перфоратор BOSCH BFG 9000</p>
-              <span class="item-old-price">32500 Р.</span>
+              <span class="item-old-price">32500 Р.</span> <!-- span /// Done-->
               <div class="btn btn-buy">
                 <span>25500 Р.</span>
               </div>
@@ -127,8 +141,8 @@
           </div>
           <div class="item-box"> 
             <article class="item"> 
-              <img class="item-photo" src="rock-drill-bosch-bfg-0002.png" height="150" width="200" alt="Перфоратор BOSCH BFG 3000"> 
-              <a class="btn-buy-now" href="#">Купить</a>  
+              <img class="item-photo" src="rock-drill-bosch-bfg-0002.jpg" width="127" height="112" alt="Перфоратор BOSCH BFG 3000"> 
+              <a class="btn-buy-now" href="#">Купить</a>   <!-- в остальных карточках забыл ссылки в блок закинуть :) -->
               <a class="btn-buy-later" href="#">В закладки</a> 
               <p>Перфоратор BOSCH BFG 3000</p>
               <span class="item-old-price">22500 Р.</span> 
@@ -139,7 +153,7 @@
           </div>
           <div class="item-box"> 
             <article class="item"> 
-              <img class="item-photo" src="rock-drill-bosch-bfg-0003.png" height="150" width="200" alt="Перфоратор BOSCH BFG 6000"> 
+              <img class="item-photo" src="rock-drill-bosch-bfg-0003.jpg" width="144" height="128" alt="Перфоратор BOSCH BFG 6000"> 
               <a class="btn-buy-now" href="#">Купить</a>  
               <a class="btn-buy-later" href="#">В закладки</a> 
               <p>Перфоратор BOSCH BFG 6000</p>
@@ -151,7 +165,8 @@
           </div>
           <div class="item-box"> 
             <article class="item item-new"> 
-              <img class="item-photo" src="rock-drill-bosch-bfg-0004.png" height="150" width="200" alt="Перфоратор BOSCH BFG 2000"> 
+              <img class="item-photo" src="rock-drill-bosch-bfg-0004.jpg" width="200" height="150" alt="Перфоратор BOSCH BFG 2000"> 
+              <img class="item-new-flag" src="item-new-flag.jpg" width="60" height="59" alt="new"> 
               <a class="btn-buy-now" href="#">Купить</a>  
               <a class="btn-buy-later" href="#">В закладки</a> 
               <p>Перфоратор BOSCH BFG 2000</p>
@@ -163,107 +178,120 @@
           </div>
         </div>
         <div class="promo-brands">
-            <div class="popular">
-                <h2>Популярные производители:</h2>
-                <a class="btn">Все производители</a>
-            </div>
-            <article class="brand"><a href="#"><img src="bosch-logo.png" height="150" width="200" alt="bosch"></a></article>
-            <article class="brand"><a href="#"><img src="makita-logo.png" height="150" width="200" alt="makita"></a></article>
-            <article class="brand"><a href="#"><img src="dewalt-logo.png" height="150" width="200" alt="dewalt"></a></article>
-            <article class="brand"><a href="#"><img src="interskol-logo.png" height="150" width="200" alt="interskol"></a></article>
-            <article class="brand"><a href="#"><img src="hitachi-logo.png" height="150" width="200" alt="hitachi"></a></article>
-            <article class="brand"><a href="#"><img src="lg-logo.png" height="150" width="200" alt="lg"></a></article>
-            <article class="brand"><a href="#"><img src="aeg-logo.png" height="150" width="200" alt="aeg"></a></article>
-            <article class="brand"><a href="#"><img src="metabo-logo.png" height="150" width="200" alt="metabo"></a></article>
+          <div class="popular">
+            <h2>Популярные производители:</h2>
+            <a class="btn">Все производители</a> <!-- Ссылка /// Done -->
+          </div>
+          <article class="brand"><a href="#"><img src="bosch-logo.jpg" height="126" width="37" alt="bosch"></a></article> <!-- width /// Done -->
+          <article class="brand"><a href="#"><img src="makita-logo.jpg" height="123" width="40" alt="makita"></a></article>
+          <article class="brand"><a href="#"><img src="dewalt-logo.jpg" height="146" width="44" alt="dewalt"></a></article>
+          <article class="brand"><a href="#"><img src="interskol-logo.jpg" height="200" width="88" alt="interskol"></a></article>
+          <article class="brand"><a href="#"><img src="hitachi-logo.jpg" height="169" width="31" alt="hitachi"></a></article>
+          <article class="brand"><a href="#"><img src="lg-logo.jpg" height="121" width="73" alt="lg"></a></article>
+          <article class="brand"><a href="#"><img src="aeg-logo.jpg" height="151" width="96" alt="aeg"></a></article>
+          <article class="brand"><a href="#"><img src="metabo-logo.jpg" height="204" width="69" alt="metabo"></a></article>
         </div>
       </div>
       <!-- End container -->
-      <div class="read-more">
+      <div class="read-more"> <!-- Скорее тут "Сервисы"/// Тут оформление одинаковое с текстом "Пара слов о перфораторах", выбивается из контейнера - для экономии кода сделал -->
         <div class="container">
-            <div class="services">
-                <h2>Сервисы</h2>
-                <p>Хороший интернет-магазин отличается от плохого не только ценами! Мы стараемся изо всех сил, чтобы сделать Ваши покупки приятными.</p>
-            </div>
-            <div class="service-switcher">
-                <ul>
-                    <li class="service-item service-item-selected"><a href="">Доставка</a></li>
-                    <li class="service-item"><a href="">Гарантия</a></li>
-                    <li class="service-item"><a href="">Кредит</a></li>
-                </ul>
-            </div>
-            <div class="delivery">
-                <b class="services-promo">Доставка</b>
-                <p>Мы с удовольствием достави Ваш товар прямо к Вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на Ваш этаж!</p>
-            </div>
+          <div class="services">
+            <h2>Сервисы</h2>
+            <p>Хороший интернет-магазин отличается от плохого не только ценами! <br>Мы стараемся изо всех сил, чтобы сделать Ваши покупки приятными.</p>
+          </div>
+          <div class="service-switcher">
+            <ul>
+              <li class="service-item service-item-selected"><a href="">Доставка</a></li> <!-- Здесь должны быть service-item service-item-selected /// Done -->
+              <li class="service-item"><a href="">Гарантия</a></li> <!-- А здесь и ниже просто service-item /// Done-->
+              <li class="service-item"><a href="">Кредит</a></li>
+            </ul>
+          </div>
           <div class="delivery">
             <b class="services-promo">Доставка</b>
             <p>Мы с удовольствием достави Ваш товар прямо к Вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на Ваш этаж!</p>
-          </div>
+            <img class="delivery-img" src="img/delivery-img.png" alt="Доставка" >
+          </div> <!-- Дальше должны быть 2 оставшихся блока переключалки - "Гарантия" и "Кредит" /// Done -->
           <div class="guarantee">
             <b class="services-promo">Гарантия</b>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, numquam.</p>
+            <p>Если купленный у нас товар поломается или заискрит,<br>а также в случае пожара, спровоцированного его возгаранием,  <br>Вы всегда можете быть  уверены в нашей гарантии. Мы обменяем <br>сгоревший товар на новый. <br>Дом уж восстановите как-нибудь сами.</p>
+            <img class="guarantee-img" src="img/guarantee-img.png" alt="Гарантия" >
           </div>
           <div class="credit">
             <b class="services-promo">Кредит</b>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, velit.</p>
+            <p>Залезть в долговую яму стало проще! <br>Кредитные консультанты придут вам на помощь.</p>
+            <img class="credit-img" src="img/credit-img.png" alt="Кредит" >
           </div>
         </div>
       </div>
-      <div class="container">
+      <div class="container"> <!-- Будешь к #попапу обращаться, так что лучше его сделать родительским элементом, а внутрь уже контейнер засунуть, причём контейнер нестандартной ширины -->
+        <!-- Начался попап "Напишите нам"-->
+        <div class="write-us" id="popup"> <!-- В макете есть скрытый блок с формой "write us", открывающийся по клику отсюда, нужно вставить в разметку/// Сюда? :) -->
+          <img src="img/popup-close-img.jpg" alt="Закрыть" class="popup-close-img"> <!-- Картинка внутри ссылки -->
+          <form>
+            <fieldset>
+              <legend>Ваше имя:</legend> <!-- Лейбл, внутри инпут -->
+              <input type="text" name="username" placeholder="Представьтесь, пожалуйста">
+              <legend>Ваш e-mail:</legend> <!-- Лейбл, внутри инпут -->
+              <input type="email" name="email" placeholder="Для отправки ответа">
+              <legend>Текст письма:</legend> <!-- Лейбл -->
+              <input type="text" name="letter" placeholder="В свободной форме"> <!-- textarea -->
+              <button class="btn" type="submit">Отправить</button>
+            </fieldset>
+          </form>
+        </div>
+        <!-- Закончился попап "Напишите нам" --> 
         <div class="company-info">
-          <div class="company-info-about">
+          <div class="company-info-about"> <!-- Лучше в отдельный информационный блок с двумя колонками о компании и контактами/// Done -->
             <h2>Компания "Техномарт"</h2>
             <p>Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и строительства не оставит равнодушным любителей сэкономить на гастарбайтерах.</p>
             <p>Мы можем доставить Ваш товар в самые отдаленные Точки России! <br>Техномарт  работает со многими транспортными компаниями:</p>
             <ul>
-                <li>Деловые линии</li>
-                <li>Автотрейдинг</li>
-                <li>ЖелДорЭкспедиция</li>
+              <li>Деловые линии</li>
+              <li>Автотрейдинг</li>
+              <li>ЖелДорЭкспедиция</li>
             </ul>
-            <a href="" class="btn">Подробнее о компании</a>
+            <a href="#" class="btn">Подробнее о компании</a>
           </div>
           <div class="company-info-contacts">
             <h2>Контакты</h2>
             <p>Вы можете забрать товар сами, заехав в наш офис:</p>
-            <a href="#"><img src="map.png" height="150" width="250" alt="Карта"></a>
-            <a href="#" class="btn">Заблудились? Напишите нам!</a> <!-- В макете есть скрытый блок с формой "write us", открывающийся по клику отсюда, нужно вставить в разметку, но не сюда :) -->
+            <a href="#"><img src="mini-map.jpg" height="300" width="158" alt="Карта"></a>
+            <a href="#" class="btn">Заблудились? Напишите нам!</a>
           </div>
         </div>
       </div>
     </main>
-    <footer class="main-footer">
-        <div class="container">
-            <div class="main-footer-top">
-                <section class="footer-contacts">
-                    <a href="#" class="main-footer-top-logo">
-                        <img src="technomart-logo.png" height="50" width="200" alt="technomart">
-                    </a> 
-                    <p>г. Санкт-Петербург, ул. Б.Конюшенная, д.19/8 <br>+7 (812) 555-05-55</p>
-                </section>
-                <section class="footer-info-list">
-                    <ul class="company-info">
-                        <li><a href="#">Компания</a></li>
-                        <li><a href="#">Новости</a></li>
-                        <li><a href="#">Каталог</a></li>
-                        <li><a href="#">Доставка</a></li>
-                        <li><a href="#">Контакты</a></li>
-                    </ul>
-                    <ul class="item-info">
-                        <li><a href="#">Материалы</a></li>
-                        <li><a href="#">Техника</a></li>
-                        <li><a href="#">Инструменты</a></li>
-                        <li><a href="#">Спецпредложения</a></li>
-                    </ul>
-                </section>
-            </div>
-          <div class="main-footer-bottom">
+    <footer class="main-footer"> <!-- Объедини футеры в один и разбей уже внутри на части /// Done-->
+      <div class="container">
+        <div class="main-footer-top">
+          <section class="footer-contacts">
+            <span class="main-footer-top-logo">Техномарт</span>
+            <p>г. Санкт-Петербург, ул. Б.Конюшенная, д.19/8 <br>+7 (812) 555-05-55</p>
+          </section>
+          <section class="footer-info-list">
+            <ul class="company-info">
+              <li><a href="#">Компания</a></li> <!-- Внутри ссылки/// Done -->
+              <li><a href="#">Новости</a></li>
+              <li><a href="#">Каталог</a></li>
+              <li><a href="#">Доставка</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+            <ul class="item-info">
+              <li><a href="#">Материалы</a></li> <!-- Внутри ссылки /// Done -->
+              <li><a href="#">Техника</a></li>
+              <li><a href="#">Инструменты</a></li>
+              <li><a href="#">Спецпредложения</a></li>
+            </ul>
+          </section>
+        </div>
+        <div class="main-footer-bottom">
           <section class="footer-copyright-technomart">
             &copy; 2010-2016 Компания "Техномарт"<br>
             Все права защищены
           </section>
           <section class="footer-social">
             <ul>
-              <li><a class="social-btn social-btn-vk" href="#">Вконтакте</a></li>
+              <li><a class="social-btn social-btn-vk" href="#">Вконтакте</a></li> <!-- Тоже список? /// Done-->
               <li><a class="social-btn social-btn-fb" href="#">Фейсбук</a></li>
               <li><a class="social-btn social-btn-inst" href="#">Инстаграм</a></li>
             </ul>
