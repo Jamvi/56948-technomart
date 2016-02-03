@@ -1,0 +1,20 @@
+body {
+	font-size: 13px;
+	color: black; /*#000 ? :)*/
+	font-weight: 400;
+	line-height: 24px;
+	font-family: PT Sans Narrow; /*В кавычки, если есть пробелы, иначе за разные шрифты примет*/
+
+}
+
+h2 {
+	font-size: 30px;
+	color: black;
+	font-family: Cuprum;
+	font-weight: 400;
+	line-height: 30px;
+}
+
+h2 {
+	/* Не используются в проекте и отсутсвуют в стайлгайде */
+}
